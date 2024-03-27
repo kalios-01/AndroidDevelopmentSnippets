@@ -1,0 +1,27 @@
+        if (isDarkModeActive()) {
+            // Dark mode is active, set light image
+            theme_switch.setImageResource(R.drawable.dark_mode)
+        } else {
+            // Light mode is active, set dark image
+            theme_switch.setImageResource(R.drawable.light_mode)
+        }
+        // theme change
+        theme_switch.setOnClickListener {
+            // Toggle between light and dark images
+            if (isDarkModeActive()) {
+                // Dark mode is active, set light image
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+            } else {
+                // Light mode is active, set dark image
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+            }
+        }
+
+
+funtion to check device theme 
+    private fun isDarkModeActive(): Boolean {
+        return when (resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK) {
+            Configuration.UI_MODE_NIGHT_YES -> true
+            else -> false
+        }
+    }

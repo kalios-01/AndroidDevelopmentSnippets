@@ -1,0 +1,13 @@
+    <color name="statusBar_color">#fff</color> white theme color
+    <color name="statusBar_color">#</color> dark theme color
+
+
+
+style light
+
+        <item name="android:statusBarColor">@color/statusBar_color</item>
+        <item name="android:windowLightStatusBar">true</item>
+
+style dark
+        <item name="android:statusBarColor">@color/statusBar_color</item>
+        <item name="android:windowLightStatusBar">false</item>
